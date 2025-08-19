@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model List<Mascotas>
+
+<div class="container mt-4">
+    <div class="row">
+        <h2>Lista de mascotas registradas</h2>
+    </div>
+    <div class="table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre:</th>
+                    <th>Raza:</th>
+                    <th>Genero mascota:</th>
+                    <th>Descripcion servicio animal:</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mascota in Model)
+                {
+                    <tr>
+                        <td>@mascota.nombre</td>
+                        <td>@mascota.raza</td>
+                        <td>@mascota.generoRaza</td>
+                        <td>@mascota.descripcion</td>
+                    </tr>
+                }
+            </tbody>
+            </table>
+        </div>
+    </div>
+
