@@ -28,5 +28,9 @@ namespace Veterinaria_crudcore.Controllers
                 return Content("Error al listar: " + ex);
             }
         }
+        public IActionResult viewCreate()
+        {
+            return View();
+        }
     }
 }
