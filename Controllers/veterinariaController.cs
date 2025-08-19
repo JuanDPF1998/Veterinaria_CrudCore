@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Veterinaria_crudcore.Data;
+using Veterinaria_crudcore.Models;
 
 namespace Veterinaria_crudcore.Controllers
 {
@@ -31,6 +32,20 @@ namespace Veterinaria_crudcore.Controllers
         public IActionResult viewCreate()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Mascotas mascotas)
+        {
+            try
+            {
+                var mascota = _context.mascotas.Add(mascotas);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                return Content($"Error al insertar el registro en la BD: {ex.Message}");
+            }
         }
     }
 }
