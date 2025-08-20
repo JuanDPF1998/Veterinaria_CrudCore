@@ -20,6 +20,7 @@
                     <th>Raza:</th>
                     <th>Genero mascota:</th>
                     <th>Descripcion servicio animal:</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,9 @@
                         <td>@mascota.raza</td>
                         <td>@mascota.generoRaza</td>
                         <td>@mascota.descripcion</td>
+                        <td>
+                            <a asp-route-id="@mascota.Id" asp-action="viewEdit" class="btn btn-warning">Editar</a>
+                        </td>
                     </tr>
                 }
             </tbody>

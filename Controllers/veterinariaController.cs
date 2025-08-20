@@ -47,5 +47,18 @@ namespace Veterinaria_crudcore.Controllers
                 return Content($"Error al insertar el registro en la BD: {ex.Message}");
             }
         }
+        public IActionResult viewEdit(int id)
+        {
+            if(id == 0)
+            {
+                return NoContent();
+            }
+            var mascota = _context.mascotas.Find(id);
+            if(mascota == null)
+            {
+                return NotFound();
+            }
+            return View(mascota);
+        }
     }
 }
