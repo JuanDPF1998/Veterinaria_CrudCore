@@ -60,5 +60,20 @@ namespace Veterinaria_crudcore.Controllers
             }
             return View(mascota);
         }
+        [HttpPost]
+        public IActionResult Editar(int id, Mascotas mascotas)
+        {
+            if (id != mascotas.Id)
+            {
+                return NotFound();
+            }
+            var veterinaria = _context.mascotas.Update(mascotas);
+            if (ModelState.IsValid)
+            {
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(veterinaria);
+        }
     }
 }

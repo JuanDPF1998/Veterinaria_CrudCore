@@ -8,7 +8,7 @@
     <div class="row">
         <h2>Editar registro</h2>
     </div>
-    <form>
+    <form asp-action="Editar">
         <input type="hidden" asp-for="Id"/>
         <div class="form-group">
             <label class="form-label">Folio Cita:</label>
@@ -29,6 +29,11 @@
         <div class="form-group">
             <label class="form-label">Descripcion servicio animal:</label>
             <input class="form-control" asp-for="descripcion"/>
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-success" type="submit">Actualizar</button>
+            <a asp-action="Index" class="btn btn-secondary">Volver</a>
         </div>
     </form>
 </div>
