@@ -16,6 +16,7 @@ namespace Veterinaria_crudcore.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    folioCita = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     raza = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     generoRaza = table.Column<string>(type: "nvarchar(max)", nullable: false),

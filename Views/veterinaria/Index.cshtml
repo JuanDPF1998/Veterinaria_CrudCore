@@ -15,6 +15,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th>Folio Cita:</th>
                     <th>Nombre:</th>
                     <th>Raza:</th>
                     <th>Genero mascota:</th>
@@ -25,6 +26,7 @@
                 @foreach (var mascota in Model)
                 {
                     <tr>
+                        <td>@mascota.folioCita</td>
                         <td>@mascota.nombre</td>
                         <td>@mascota.raza</td>
                         <td>@mascota.generoRaza</td>

@@ -3,6 +3,7 @@
     public class Mascotas
     {
         public int Id { get; set; }
+        public string folioCita { get; set; } = string.Empty;
         public string nombre { get; set; } = string.Empty;
         public string raza { get; set; } = string.Empty;
         public string generoRaza { get; set; } = string.Empty;

@@ -33,6 +33,10 @@ namespace Veterinaria_crudcore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("folioCita")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("generoRaza")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

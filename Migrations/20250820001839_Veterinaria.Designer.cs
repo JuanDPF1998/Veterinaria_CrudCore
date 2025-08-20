@@ -11,7 +11,7 @@ using Veterinaria_crudcore.Data;
 namespace Veterinaria_crudcore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250818175528_Veterinaria")]
+    [Migration("20250820001839_Veterinaria")]
     partial class Veterinaria
     {
         /// <inheritdoc />
@@ -33,6 +33,10 @@ namespace Veterinaria_crudcore.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("folioCita")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
