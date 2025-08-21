@@ -92,5 +92,21 @@ namespace Veterinaria_crudcore.Controllers
             }
             return View();
         }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound();
+            }
+            var vete = _context.mascotas.Find(id);
+            if (ModelState.IsValid)
+            {
+                _context.mascotas.Remove(vete);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(vete);
+        }
     }
 }
