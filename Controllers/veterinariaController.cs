@@ -74,6 +74,23 @@ namespace Veterinaria_crudcore.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(veterinaria);
+        }        
+        public IActionResult viewDelete(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound();
+            }
+            try
+            {
+                var vete = _context.mascotas.Find(id);
+                return View(vete);
+            }
+            catch (Exception ex)
+            {
+                Content("Error al cargar la vista eliminar:" + ex.Message);
+            }
+            return View();
         }
     }
 }
